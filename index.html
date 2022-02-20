@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="main">
+        <div id="header">
+            <div id="hbox">
+                <img src="images/1050915.png" alt="" id="paw">
+                <h1>Cyber pet</h1>
+            </div>
+        </div>
+        
+        <div id="pet">
+            <div>
+                    <input type="text" name="name" id="name" placeholder="Pet name..">
+                        <label for="animal">Choose your pet type: </label>
+                                    <select name="animal" id="animal">
+                                        <option value="Dog">Dog</option>
+                                        <option value="Cat">Cat</option>
+                                        <option value="Bunny">Bunny</option>
+                                    </select>
+                                    <button id="createPet">Create Pet</button>
+            </div>
+        </div>
+        
+        <div id="actionBar">
+            <div class="aBox">
+                <button class="btn" id="feed" onclick="feed()">Feed</button>
+            </div>
+            <div class="aBox">
+                <button class="btn" id="water" onclick="hydrate()">Water</button>
+            </div>
+            <div class="aBox">
+                <button class="btn" id="play" onclick="play()">Play</button>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
