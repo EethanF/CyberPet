@@ -8,11 +8,11 @@ let createPet = document.getElementById("createPet")
 
 createPet.addEventListener(`click`, () =>{
     if (petType = "Dog"){
-        namePet = new Dog(name);
+        new Dog(petName);
     }else if (petType = "Cat"){
-        namePet = new Cat(name);
+        new Cat(petName);
     }else if (petType = "Bunny"){
-        namePet = new Bunny(name);
+        new Bunny(petName);
     }
 })
 
