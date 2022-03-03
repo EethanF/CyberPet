@@ -1,21 +1,20 @@
-// const hunger = document.getElementById("hunger").innerHtml = `hunger: ${this._hunger}`;
-// const thirst = document.getElementById("thirst").innerHtml = `thirst: ${this._hunger}`;
-// const energy = document.getElementById("energy").innerHtml = `energy: ${this._hunger}`;
-let input = document.querySelector("input");
-let namePet = document.getElementById("name");
-let animal = document.getElementById("animal");
-let createPet = document.getElementById("createPet")
+const createDog = document.getElementById("dog")
+const createCat = document.getElementById("cat")
 
-createPet.addEventListener(`click`, () =>{
-    if (petType = "Dog"){
-        new Dog(petName);
-    }else if (petType = "Cat"){
-        new Cat(petName);
-    }else if (petType = "Bunny"){
-        new Bunny(petName);
-    }
-})
 
+createDog.addEventListener(`click`, () =>{
+    let newAnimal = prompt("enter name: ");
+    console.log(`You have a new dog! Say hello to ${newAnimal}!`);
+    document.getElementById("animalImg").innerHTML=`<div id='imgBox'> <h1>${newAnimal}</h1> <img src='images/dogPic.png' id='catImg'/> </div>`
+    newAnimal = new Dog; 
+});
+
+createCat.addEventListener(`click`, () =>{
+    let newAnimal = prompt("enter name: ");
+    console.log(`You have a new cat! Say hello to ${newAnimal}!`);
+    document.getElementById("animalImg").innerHTML=`<div id='imgBox'> <h1>${newAnimal}</h1> <img src='images/catPic.png' id='catImg'/> </div>`
+    newAnimal = new Cat;
+});
 
 
 
@@ -23,15 +22,15 @@ class Pet{
     constructor(name, animal){
         this._name = name;
         this._animal = animal;
-        this._happiness = 50;
-        this._hunger = 50;
-        this._thirst =  50;
+        this._happiness = 0;
+        this._hunger = 40;
+        this._thirst =  40;
     }
     get name(){
         return this._name;
     }
-    get petType(){
-        return this._petType
+    get animal(){
+        return this._animal
     }
     get thirst(){
         return this._thirst;
@@ -43,62 +42,69 @@ class Pet{
         return this._happiness;
     }
     play(){
-        if (this._energy==0) {
-            console.log(`${this._name} is to tired to play :(`);
-        } else {
-            console.log(`${this._name} is playing!`);
-            console.log(`${this._name} is happier!`);
+        this._hunger+=20;
+        this._thirst+=20;
+        this._happiness+=20;
+        if (this._happiness<=0){
+            console.log(`Hapiness level: ${this._happiness}`)
+            console.log("You should play with them!")
+        }
+        else if(this._happiness>=100){
+            console.log(`Hapiness level: ${this._happiness}`)
+            console.log("They're to tired to play!")
+        }
+        else{
+            console.log(`Hapiness level: ${this._happiness}`)
+            console.log("I think they enjoyed that!")
         }
     }
     feed(){
-        if (this._hunger==100) {
-            console.log(`${this._name} is hungry`);
-        } else if (this._hunger == 0) {
-            console.log(`${this._name} seems to be full`);
-        } else {
-            console.log(`${this._name} seems satisfied for now`);
+        this._hunger-=20;
+        if (this._hunger<=0){
+            console.log(`Hunger level: ${this._hunger}`)
+            console.log("They're full, maybe you should play with them!")
+        }
+        else if(this._hunger>=100){
+            console.log(`Hunger level: ${this._hunger}`)
+            console.log("They're hungry maybe you should feed them.")
+        }
+        else{
+            console.log(`Hunger level: ${this._hunger}`)
+            console.log("I think they enjoyed that!")
         }
     }
     hydrate(){
-        if (this._thirst==100) {
-            console.log(`${this._name} ran away to find water`);
-        } else {
-            console.log(`${this._name} is hydrated!`);
-            console.log(`${this._name}'s thirst level is ${this._thirst}`);
+        this._thirst-=20;
+        this._happiness-=20;
+        if (this._thirst<=0){
+            console.log(`thirst level: ${this._thirst}`)
+            console.log("They're full, maybe you should play with them!")
+        }
+        else if(this._thirst>=100){
+            console.log(`thirst level: ${this._thirst}`)
+            console.log("They're thirsty maybe you should give them some water.")
+        }
+        else{
+            console.log(`thirst level: ${this._thirst}`)
+            console.log("I think they enjoyed that!")
         }
     }
 }
 
 
+
 class Dog extends Pet{
     constructor(name){
         super(name);
-        this._animal = "dog";
+        this._animal = "Dog";
     }
 }
 
 class Cat extends Pet{
     constructor(name){
         super(name);
-        this._animal = "cat";
+        this._animal = "Cat";
     }
 }
-
-class Bunny extends Pet{
-    constructor(name){
-        super(name);
-        this._animal = "bunny";
-    }
-}
-
-
-
-
-// class Turtle extends Pet{
-//     constructor(name){
-//         super(name);
-//         this._animal = "turtle";
-//     }
-// }
 
 
