@@ -44,6 +44,7 @@ h1{
     height: 67%;
     width: 100%;
     display: flex;
+    flex-direction: column;
     border: 2px solid #FF1053;
 }
 #actionBar{
@@ -78,4 +79,24 @@ button{
     font-family: 'Staatliches', cursive;
     color: #C1CAD6;
     background-color: #6C6EA0;
+}
+
+#catImg{
+    height: 350px;
+    width: 300px;
+    align-self: flex-end;
+}
+
+#animalImg{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+#imgBox{
+    color: #66C7F4;
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;
+    justify-content: center;
 }
