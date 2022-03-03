@@ -6,14 +6,14 @@ createDog.addEventListener(`click`, () =>{
     let newAnimal = prompt("enter name: ");
     console.log(`You have a new dog! Say hello to ${newAnimal}!`);
     document.getElementById("animalImg").innerHTML=`<div id='imgBox'> <h1>${newAnimal}</h1> <img src='images/dogPic.png' id='catImg'/> </div>`
-    newAnimal = new Dog; 
+    console.log(new Dog(newAnimal)); 
 });
 
 createCat.addEventListener(`click`, () =>{
     let newAnimal = prompt("enter name: ");
     console.log(`You have a new cat! Say hello to ${newAnimal}!`);
     document.getElementById("animalImg").innerHTML=`<div id='imgBox'> <h1>${newAnimal}</h1> <img src='images/catPic.png' id='catImg'/> </div>`
-    newAnimal = new Cat;
+    console.log(new Cat(newAnimal));
 });
 
 
